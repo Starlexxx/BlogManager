@@ -12,5 +12,5 @@ I've used Ruby 2.7.0 and rails 6.0.3
   $ rake db:migrate
   $ rails s 
   ```
-3. Now you can open your web-browser and visit localhost:3000
+3. Now you can open your web-browser and visit ```localhost:3000
 
