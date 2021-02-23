@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the blog manager with categories, log in and localisation.
+I've used Ruby 2.7.0 and rails 6.0.3
 
-Things you may want to cover:
+# USING
 
-* Ruby version
+1. Download this repository, check that you are using same Ruby and rails versions or change them in your Gemfile.
+2. Write down in terminal opened in the progect folder this cammands
+  $ bundle instal
+  $ rake db:migrate
+  $ rails s
+3. Now you can open your web-browser and visit localhost:3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
