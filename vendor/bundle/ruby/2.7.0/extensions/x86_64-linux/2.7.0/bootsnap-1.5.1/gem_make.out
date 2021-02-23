@@ -1,0 +1,24 @@
+current directory: /home/starlex/Documents/Study/sem3/WEB-Programming/Tasks/BlogManager/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.5.1/ext/bootsnap
+/home/starlex/.rbenv/versions/2.7.0/bin/ruby -I /home/starlex/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20201218-27823-1ulgx2t.rb extconf.rb
+creating Makefile
+
+current directory: /home/starlex/Documents/Study/sem3/WEB-Programming/Tasks/BlogManager/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /home/starlex/Documents/Study/sem3/WEB-Programming/Tasks/BlogManager/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+bootsnap.c: In function ‘bs_cache_path’:
+bootsnap.c:277:39: warning: format ‘%llx’ expects argument of type ‘long long unsigned int’, but argument 5 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+   sprintf(*cache_path, "%s/%02x/%014llx", cachedir, first_byte, remainder);
+                                 ~~~~~~^                         ~~~~~~~~~
+                                 %014lx
+bootsnap.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/starlex/Documents/Study/sem3/WEB-Programming/Tasks/BlogManager/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20201218-27823-1ew95hm/bootsnap

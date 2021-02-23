@@ -1,0 +1,615 @@
+Started GET "/" for ::1 at 2020-12-29 17:47:34 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+Completed 401 Unauthorized in 432ms (ActiveRecord: 0.0ms | Allocations: 299828)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-29 17:47:34 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 595)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3510)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/starlex/Documents/Study/sem3/WEB-Programming/Tasks/BlogManager/public/packs
+[Webpacker] warning ../../../../../../package.json: No license field
+
+[Webpacker] Hash: f0d7ce199ea0cc483e4a
+Version: webpack 4.44.2
+Time: 2913ms
+Built at: 12/29/2020 5:47:39 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e9012c299ec8a35757d7.js    433 KiB  application  [emitted] [immutable]  application
+js/application-e9012c299ec8a35757d7.js.map    506 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e9012c299ec8a35757d7.js js/application-e9012c299ec8a35757d7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 675 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+Completed 200 OK in 4896ms (Views: 4885.5ms | ActiveRecord: 0.5ms | Allocations: 37796)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-12-29 17:47:53 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Zs6CiZ2ZHM4Exm4luCuETk2ZDYRsYlHyiEHajc3tRuYJqMDk/wXga/2rirc2AOcs3NE5nsytvUR7Ne0oWRFnDQ==", "user"=>{"email"=>"mr.wedner@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mr.wedner@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+Redirected to http://localhost:3000/
+Completed 302 Found in 229ms (ActiveRecord: 0.4ms | Allocations: 6099)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:47:53 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 26.8ms | Allocations: 17140)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 30.3ms | ActiveRecord: 2.1ms | Allocations: 26312)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:47:59 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 5011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 10908)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:48:02 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 7191)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 1.2ms | Allocations: 13479)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:48:04 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5005)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 10168)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:48:05 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 7190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 1.0ms | Allocations: 13470)
+
+
+Started GET "/blogs/7" for ::1 at 2020-12-29 17:48:15 +0300
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18:in `show'
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:3
+  Rendered blogs/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 11165)
+
+
+Started GET "/blogs/7/edit" for ::1 at 2020-12-29 17:48:18 +0300
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:36:in `edit'
+  Rendering blogs/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/_form.html.erb:17:in `map'
+  Rendered blogs/_form.html.erb (Duration: 5.2ms | Allocations: 3049)
+  Rendered blogs/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3325)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 10249)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:48:29 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 7189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 13455)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-29 17:48:32 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `require_admin'
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.6ms | Allocations: 893)
+  Rendered categories/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 9179)
+
+
+Started POST "/categories" for ::1 at 2020-12-29 17:48:43 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"gJdupgci3LJScFHKoRrzmxhU6ddd8NQPcDIkuN+YQEDG/qrWqZQDeHzqawAhc4kgnR42acr9f5eLuDgQ6GIxWg==", "category"=>{"category"=>"хуй"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `require_admin'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "хуй"], ["created_at", "2020-12-29 14:48:43.180998"], ["updated_at", "2020-12-29 14:48:43.180998"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/categories/12
+Completed 302 Found in 18ms (ActiveRecord: 6.4ms | Allocations: 6332)
+
+
+Started GET "/categories/12" for ::1 at 2020-12-29 17:48:43 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:69:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 0.4ms | Allocations: 8631)
+
+
+Started GET "/categories" for ::1 at 2020-12-29 17:48:45 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:14
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 9826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 16152)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:48:49 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 12]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 8058)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 14325)
+
+
+Started GET "/blogs/new" for ::1 at 2020-12-29 17:48:53 +0300
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/_form.html.erb:17:in `map'
+  Rendered blogs/_form.html.erb (Duration: 2.8ms | Allocations: 2244)
+  Rendered blogs/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2388)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 8736)
+
+
+Started POST "/blogs" for ::1 at 2020-12-29 17:49:02 +0300
+Processing by BlogsController#create as HTML
+  Parameters: {"authenticity_token"=>"3nknRoPDxHAZemGFt5YphN+AmHHXL+pid5lTbDhJx+8TakmTVhB9ZxUkwtXQR0MIyZljphlcmeVJWAG3FomcoQ==", "blog"=>{"title"=>"пизда", "content"=>"хуй", "category_id"=>"12"}, "commit"=>"Create Blog"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:26:in `create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:26:in `create'
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "content", "created_at", "updated_at", "category_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "пизда"], ["content", "хуй"], ["created_at", "2020-12-29 14:49:02.423704"], ["updated_at", "2020-12-29 14:49:02.423704"], ["category_id", 12]]
+  ↳ app/controllers/blogs_controller.rb:26:in `create'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:26:in `create'
+Redirected to http://localhost:3000/blogs/15
+Completed 302 Found in 13ms (ActiveRecord: 5.6ms | Allocations: 6829)
+
+
+Started GET "/blogs/15" for ::1 at 2020-12-29 17:49:02 +0300
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18:in `show'
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:3
+  Rendered blogs/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2678)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 9434)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:49:04 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 12]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 8548)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.8ms | Allocations: 14823)
+
+
+Started GET "/blogs/15" for ::1 at 2020-12-29 17:49:09 +0300
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18:in `show'
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:3
+  Rendered blogs/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2676)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 9425)
+
+
+Started DELETE "/blogs/15" for ::1 at 2020-12-29 17:49:10 +0300
+Processing by BlogsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1wfqhqBmTO+HzRuGvJUD7nYWUWs3pHsONS090CSXwjyzS2go/+B2zUj8MRzbG3cJe4qy/24qODglgBOUDStqLA==", "id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:51:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:53:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/blogs_controller.rb:53:in `destroy'
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:53:in `destroy'
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 12ms (ActiveRecord: 5.2ms | Allocations: 6146)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:49:10 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 12]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 8052)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 14312)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-29 17:49:12 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `require_admin'
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.0ms | Allocations: 510)
+  Rendered categories/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1577)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7744)
+
+
+Started GET "/categories" for ::1 at 2020-12-29 17:49:15 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:14
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 9535)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 15724)
+
+
+Started DELETE "/categories/12" for ::1 at 2020-12-29 17:49:19 +0300
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9PdwzAH5JvdhvTbUhu70JzCNmBvoDRzB+v57wOO4ShSQu/JiXn8c1a6MHE7hYIDAPRF7j7GDX/fqU1WEygTiBA==", "id"=>"12"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:69:in `set_category'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `require_admin'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:58:in `destroy'
+  [1m[36mCategory Destroy (0.2ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/categories_controller.rb:58:in `destroy'
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:58:in `destroy'
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 19ms (ActiveRecord: 12.5ms | Allocations: 5313)
+
+
+Started GET "/categories" for ::1 at 2020-12-29 17:49:19 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:14
+  Rendered categories/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 8126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 14335)
+
+
+Started GET "/blogs/new" for ::1 at 2020-12-29 17:49:20 +0300
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/_form.html.erb:17:in `map'
+  Rendered blogs/_form.html.erb (Duration: 2.3ms | Allocations: 2190)
+  Rendered blogs/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 8481)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:49:22 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 7189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.6ms | Allocations: 13459)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-12-29 17:49:27 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XuRxWsAzNx52sXfYwqyRYkr5BjaAmSC1r51OqJ993yk6qPP0n7UNPLmAXUKlIuWFR2XlotkXY4O/MGDstsF3OQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms | Allocations: 4727)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:49:27 +0300
+Processing by BlogsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-29 17:49:27 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5902)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-12-29 17:49:33 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"NL4o46QQSKpY8z0O9459foKRsMiabuy7JKK2iUBCQgrRP+0tUv412tLzWUBDbDBKhNfBZU3qTdDAwei4D8dm6Q==", "user"=>{"email"=>"andrew06-06@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "andrew06-06@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+Completed 401 Unauthorized in 219ms (ActiveRecord: 0.1ms | Allocations: 1384)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"NL4o46QQSKpY8z0O9459foKRsMiabuy7JKK2iUBCQgrRP+0tUv412tLzWUBDbDBKhNfBZU3qTdDAwei4D8dm6Q==", "user"=>{"email"=>"andrew06-06@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 210ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 5717)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-12-29 17:49:42 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"rp56U/iouSfI1PoYxapJc8WMuxxv8yMAi2fkhV2u9IhLH7+dDkbEV0LUnlZxSARHw8rKsbh3gmtvBLq0EivQaw==", "user"=>{"email"=>"andrew06-06@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "andrew06-06@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+Redirected to http://localhost:3000/
+Completed 302 Found in 220ms (ActiveRecord: 0.1ms | Allocations: 2152)
+
+
+Started GET "/" for ::1 at 2020-12-29 17:49:42 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 7187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.6ms | Allocations: 12555)
+
+
+Started GET "/blogs/7" for ::1 at 2020-12-29 17:49:50 +0300
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18:in `show'
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:3
+  Rendered blogs/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 7634)
+
+
+Started GET "/blogs" for ::1 at 2020-12-29 17:49:54 +0300
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/blogs/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/blogs/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/views/blogs/index.html.erb:28
+  Rendered blogs/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 7188)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.6ms | Allocations: 12580)
+
+
+Started GET "/blogs/create" for ::1 at 2020-12-29 17:50:01 +0300
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `switch_locale'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 2084)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/blogs_controller.rb:18:in `show'
+app/controllers/application_controller.rb:20:in `switch_locale'
